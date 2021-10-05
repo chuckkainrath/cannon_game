@@ -34,8 +34,11 @@
 - Given: I start the game or I hit the target.
 - When: I display the leaderboard. 
 - Then: I see my name, best score, worst score, average score, and number of games played. 
+----
 
-
+- Given: I am playing the game.
+- When: I finished the game.
+- Then: I am asked whether I would like to play the game again or exit the game.
 
 
 
