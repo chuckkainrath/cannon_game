@@ -1,5 +1,8 @@
 {
-  "players": [
-
-  ]
+  "chuck": {
+    "best_score": 2,
+    "worst_score": 10,
+    "average_score": 4.5,
+    "games_played": 4
+  }
 }
