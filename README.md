@@ -19,8 +19,8 @@
 - When: I enter the name Frank.
 - Then: I get a message "Welcome Frank".
 
-
 ----
+
 - Given: I am not a new user.
 - When: I enter my username.
 - Then: I see the leaderboard. 
