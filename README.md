@@ -19,8 +19,8 @@
 - When: I enter the name Frank.
 - Then: I get a message "Welcome Frank".
 
-
 ----
+
 - Given: I am not a new user.
 - When: I enter my username.
 - Then: I see the leaderboard. 
@@ -45,12 +45,33 @@
 - Then: I am asked whether I would like to play the game again or exit the game.
 
 ----
+**
 
-Given: I have a name Ramsha. 
-And: The name Ramsha exist
-When: I search for Ramsha.
-Then: I get my name, my best score, my worst score, my average score, and number of times I played the game. 
+- Given: I have the best score of 4. 
+- And: I scored 2
+- When: I update my best score.
+- Then: my best score will be 2. 
 
+
+- Given: I have the worst score of 4.
+- And: I scored 2. 
+- When: I update my worst score. 
+- Then: my worst score will be 4. 
+
+
+- Given: I have played 10 games. ** Dont test it
+- And: I played another game.
+- When: I update games played.
+- Then: I have now played 11 games. 
+
+
+- Given: I have the average of 4.
+- And: I have played 10 games.
+- And: I have new score of 5.
+- When: I update the average.
+- Then: My new average will be 4.09.
+
+**
 
 Given: I am a user. 
 And: I have completed the game with score of 4 and my previous best score was 6
