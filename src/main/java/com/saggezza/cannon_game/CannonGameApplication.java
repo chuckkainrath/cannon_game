@@ -17,10 +17,8 @@ public class CannonGameApplication {
 //		IGameFlow gameFlow = new GameFlow(shotFlow, target);
 //		gameFlow.playGame();
 		IPlayerData data = new PlayerData();
-		System.out.println(data.getPlayerBestScore("chuck"));
-		System.out.println(data.getPlayerAverageScore("chuck"));
-		System.out.println(data.getPlayerWorstScore("chuck"));
-		System.out.println(data.getPlayerGamesPlayed("chuck"));
+		System.out.println(data.playerExists("chuck"));
+		data.createPlayer("ramsha", 1, 2, 5, 3.2);
 	}
 
 }

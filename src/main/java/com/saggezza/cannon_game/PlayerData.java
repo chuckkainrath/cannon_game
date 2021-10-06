@@ -4,17 +4,26 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 
 public class PlayerData implements IPlayerData {
 
+    public void writeFile(JSONObject obj) {
+        ClassLoader loader = getClass().getClassLoader();
+        URL resource = loader.getResource("playerData.json");
+        try {
+            File playerFile = new File(resource.toURI());
+            FileWriter writer = new FileWriter(playerFile);
+            writer.write(obj.toJSONString());
+            writer.close();
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public JSONObject readFile() {
-        // Open playerData file
         ClassLoader loader = getClass().getClassLoader();
         URL resource = loader.getResource("playerData.json");
         JSONObject jsonObj = null;
@@ -70,5 +79,27 @@ public class PlayerData implements IPlayerData {
         Long playedLong =  (Long) playerObj.get("games_played");
         int played = playedLong.intValue();
         return played;
+    }
+
+    public void createPlayer(String name, int bestScore, int worstScore, int gamesPlayed, double aveScore) {
+        JSONObject jsonObj = readFile();
+        JSONObject newPlayer = new JSONObject();
+        newPlayer.put("best_score", bestScore);
+        newPlayer.put("worst_score", worstScore);
+        newPlayer.put("games_played", gamesPlayed);
+        newPlayer.put("average_score", aveScore);
+        jsonObj.put(name, newPlayer);
+        writeFile(jsonObj);
+    }
+
+    public void updatePlayer(String name, int bestScore, int worstScore, int gamesPlayed, double aveScore) {
+        JSONObject jsonObj = readFile();
+        JSONObject player = (JSONObject) jsonObj.get(name);
+        player.put("best_score", bestScore);
+        player.put("worst_score", worstScore);
+        player.put("games_played", gamesPlayed);
+        player.put("average_score", aveScore);
+        jsonObj.put(name, player);
+        writeFile(jsonObj);
     }
 }
