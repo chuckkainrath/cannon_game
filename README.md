@@ -110,6 +110,50 @@ When: I completed the game.
 Then: I see my the total # of games displayed.
 
 
+Flow Class GWT
+
+- Given: I am the user.
+- When: I initialize the game.
+- Then: I am asked for a user name once.
+
+- Given: Mansoor is in the records
+- When: I enter the name 'Mansoor'
+- Then: the playerExists method is called once
+
+-Given : Mansoor exists
+when: i start the game
+then: the object to display stats is called once
+
+-Given : Mansoor exists
+when: i start the game
+then : the gameflow object is called once
+
+-Given : Chuck does not exists
+when: i start the game
+then : the gameflow object is called once
+
+Given : Chuck does not exists
+When: The game has ended
+Then: create player method is called once
+
+Given : Mansoor exists
+When: The game has ended
+Then: update player method is called once - update player flow??
+
+
+Display stats?
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
