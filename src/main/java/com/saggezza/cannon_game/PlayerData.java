@@ -16,7 +16,7 @@ public class PlayerData implements IPlayerData {
         try {
             File playerFile = new File(resource.toURI());
             FileWriter writer = new FileWriter(playerFile);
-            writer.write(obj.toJSONString());
+            writer.write(obj.toJSONString()); //json gets converted into text; writing to the file
             writer.close();
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
@@ -28,9 +28,9 @@ public class PlayerData implements IPlayerData {
         URL resource = loader.getResource("playerData.json");
         JSONObject jsonObj = null;
         try {
-            File playerFile = new File(resource.toURI());
-            JSONParser parser = new JSONParser();
-            FileReader reader = new FileReader(playerFile);
+            File playerFile = new File(resource.toURI()); //File reader reads the file so you have to pass file object
+            JSONParser parser = new JSONParser(); //Parser converts the regular text to Json object
+            FileReader reader = new FileReader(playerFile); //Read through the input
             Object obj = parser.parse(reader);
             jsonObj = (JSONObject) obj;
             reader.close();
