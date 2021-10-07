@@ -11,7 +11,11 @@ public class PostGameFlowTest {
  public void CreatePlayerTest(){
        // Given : Chuck does not exists
         IPlayerData mockCreatePlayer = mock(IPlayerData.class);
+        when(mockCreatePlayer.playerExists("Chuck")).thenReturn(false);
 
+       // When: The game has ended
+
+      // Then: create player method is called once
 
 
     }
