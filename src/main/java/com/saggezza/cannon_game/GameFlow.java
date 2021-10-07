@@ -1,6 +1,6 @@
 package com.saggezza.cannon_game;
 
-public class GameFlow implements IGameFlow {
+public class  GameFlow implements IGameFlow {
 
     private IShotFlow shotFlow;
     private ITarget target;
