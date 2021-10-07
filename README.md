@@ -112,7 +112,7 @@ Then: I see my the total # of games displayed.
 
 Flow Class GWT
 
-// StartGameFlow
+// StartGameFlow Shilpa
 - Given: I am the user.
 - When: I initialize the game.
 - Then: I am asked for a user name once.
@@ -126,7 +126,7 @@ Flow Class GWT
 - then: the object to display stats is called once
 // End StartGameFlow
 
-// MainGameFlow
+// MainGameFlow Rajaab Mansour
 - Given : Mansoor exists
 - when: i start the game
 - then : the startgameflow is called once
@@ -145,7 +145,7 @@ Flow Class GWT
 // End MainGameFlow
 
 
-// PostGameFlow
+// PostGameFlow Roberto Priyanka
 - Given : Chuck does not exists
 - When: The game has ended
 - Then: create player method is called once
@@ -159,13 +159,13 @@ Flow Class GWT
 - Then: displayflow is called once
 // End PostGameFlow
 
-// DisplayFlow
+// DisplayFlow Irfa 
 - Given: I am a user
 - When: I display the stats
 - Then: each of the getStats method is called once
 // End DisplayFlow
 
-// UpdateFlow
+// UpdateFlow Chuck Ramsha
 - Given: Mansoor exists and I score 5
 - When: I update Mansoors stats
 - Then: each of the getStats method is called once
