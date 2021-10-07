@@ -34,13 +34,7 @@ public class PlayerData implements IPlayerData {
             Object obj = parser.parse(reader);
             jsonObj = (JSONObject) obj;
             reader.close();
-        } catch(URISyntaxException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch(ParseException e) {
+        } catch(URISyntaxException | IOException | ParseException e) {
             e.printStackTrace();
         }
         return jsonObj;
