@@ -112,6 +112,7 @@ Then: I see my the total # of games displayed.
 
 Flow Class GWT
 
+// StartGameFlow
 - Given: I am the user.
 - When: I initialize the game.
 - Then: I am asked for a user name once.
@@ -120,28 +121,72 @@ Flow Class GWT
 - When: I enter the name 'Mansoor'
 - Then: the playerExists method is called once
 
--Given : Mansoor exists
-when: i start the game
-then: the object to display stats is called once
+- Given : Mansoor exists
+- when: i start the game
+- then: the object to display stats is called once
+// End StartGameFlow
 
--Given : Mansoor exists
-when: i start the game
-then : the gameflow object is called once
+// MainGameFlow
+- Given : Mansoor exists
+- when: i start the game
+- then : the startgameflow is called once
 
--Given : Chuck does not exists
-when: i start the game
-then : the gameflow object is called once
+- Given : Mansoor exists
+- when: i start the game
+- then : the gameflow object is called once
 
-Given : Chuck does not exists
-When: The game has ended
-Then: create player method is called once
+- Given : Chuck does not exists
+- when: i start the game
+- then : the gameflow object is called once
 
-Given : Mansoor exists
-When: The game has ended
-Then: update player method is called once - update player flow??
+- Given : Mansoor exists
+- when: i start the game
+- then : the postgameflow object is called once
+// End MainGameFlow
 
 
-Display stats?
+// PostGameFlow
+- Given : Chuck does not exists
+- When: The game has ended
+- Then: create player method is called once
+
+- Given : Mansoor exists
+- When: The game has ended
+- Then: updateflow is called once
+
+- Given : Mansoor exists
+- When: The game has ended
+- Then: displayflow is called once
+// End PostGameFlow
+
+// DisplayFlow
+- Given: I am a user
+- When: I display the stats
+- Then: each of the getStats method is called once
+// End DisplayFlow
+
+// UpdateFlow
+- Given: Mansoor exists and I score 5
+- When: I update Mansoors stats
+- Then: each of the getStats method is called once
+
+- Given: Mansoor exists and I score 5
+- When: I update Mansoors stats
+- Then: the updatebestscore is called once
+
+- Given: Mansoor exists and I score 5
+- When: I update Mansoors stats
+- Then: the updateworstscore is called once
+- 
+- Given: Mansoor exists and I score 5
+- When: I update Mansoors stats
+- Then: the updateavescore is called once
+
+- Given: Mansoor exists and I score 5
+- When: I update Mansoors stats
+- Then: the updatePlayer is called once
+// End UpdateFlow
+
 
 
 
