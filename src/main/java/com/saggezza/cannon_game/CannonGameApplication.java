@@ -16,9 +16,6 @@ public class CannonGameApplication {
 //		target.createTarget();
 //		IGameFlow gameFlow = new GameFlow(shotFlow, target);
 //		gameFlow.playGame();
-		IPlayerData data = new PlayerData();
-		System.out.println(data.playerExists("chuck"));
-		data.createPlayer("ramsha", 1, 2, 5, 3.2);
 	}
 
 }

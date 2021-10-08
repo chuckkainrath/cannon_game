@@ -8,7 +8,7 @@ public class PostGameFlow implements IPostGameFlow {
     public PostGameFlow(IPlayerData playerdata, IUpdateFlow updateFlow, IDisplayFlow displayFlow) {
         this.playerData = playerdata;
         this.updateflow = updateFlow;
-
+        this.displayFlow = displayFlow;
     }
 
     public void postGame(String name, int score) {
