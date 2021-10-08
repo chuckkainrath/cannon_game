@@ -10,8 +10,9 @@ public class  GameFlow implements IGameFlow {
         this.target = target;
     }
 
-    public void playGame() {
+    public int playGame() {
         int attempt = 1;
+        target.createTarget();
 
         System.out.println("The target is at x: " + target.getxTarget() + ", y: " + target.getyTarget());
 
@@ -20,7 +21,7 @@ public class  GameFlow implements IGameFlow {
 
         }
         System.out.println("You hit the target on the "+ attempt+ " attempt");
-
+        return attempt;
     }
 
 }
