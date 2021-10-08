@@ -147,7 +147,7 @@ Flow Class GWT
 
 // PostGameFlow Roberto Priyanka
 - Given : Chuck does not exists
-- When: The game has ended
+- When: The game has ended and we confirm the user does not exists
 - Then: create player method is called once
 
 - Given : Mansoor exists

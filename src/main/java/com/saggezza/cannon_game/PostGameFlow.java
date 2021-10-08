@@ -3,8 +3,9 @@ package com.saggezza.cannon_game;
 public class PostGameFlow implements IPostGameFlow {
     private IPlayerData playerData;
     private IUpdateFlow updateflow;
+    private IDisplayFlow displayFlow;
 
-    public PostGameFlow(IPlayerData playerdata, IUpdateFlow updateFlow) {
+    public PostGameFlow(IPlayerData playerdata, IUpdateFlow updateFlow, IDisplayFlow displayFlow) {
         this.playerData = playerdata;
         this.updateflow = updateFlow;
 
@@ -14,6 +15,8 @@ public class PostGameFlow implements IPostGameFlow {
 
         if (playerData.playerExists(name)) {
             updateflow.updatePlayer(name, score);
+            displayFlow.leaderBoard(name);
+
         } else {
             playerData.createPlayer(name, score, score, 1, score);
         }
