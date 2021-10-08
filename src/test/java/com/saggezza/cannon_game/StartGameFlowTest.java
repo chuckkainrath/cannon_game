@@ -19,7 +19,7 @@ public class StartGameFlowTest {
     IDisplayFlow mDisplayFlow = mock(DisplayFlow.class);
 
      IStartGameFlow flowTest1 = new StartGameFlow(mPlayerData,mDisplayFlow);
-    flowTest1.StartGame();
+    String name = flowTest1.StartGame();
 
      verify(mPlayerData,times(1)).playerExists("chuck");
     }
@@ -34,7 +34,7 @@ public class StartGameFlowTest {
         IDisplayFlow mDisplayFlow = mock(DisplayFlow.class);
 
         IStartGameFlow flowTest2 = new StartGameFlow(mPlayerData,mDisplayFlow);
-        flowTest2.StartGame();
+        String name = flowTest2.StartGame();
 
         verify(mPlayerData,times(1)).playerExists("shilpa");
 
@@ -49,7 +49,7 @@ public class StartGameFlowTest {
         IDisplayFlow mDisplayFlow = mock(DisplayFlow.class);
 
         IStartGameFlow flowTest2 = new StartGameFlow(mPlayerData,mDisplayFlow);
-        flowTest2.StartGame();
+        String name = flowTest2.StartGame();
 
        verify(mDisplayFlow, times(1)).leaderBoard("chuck");
     }
@@ -63,7 +63,7 @@ public class StartGameFlowTest {
         IDisplayFlow mDisplayFlow = mock(DisplayFlow.class);
 
         IStartGameFlow flowTest2 = new StartGameFlow(mPlayerData,mDisplayFlow);
-        flowTest2.StartGame();
+        String name = flowTest2.StartGame();
 
         verify(mDisplayFlow, times(0)).leaderBoard("shilpa");
     }

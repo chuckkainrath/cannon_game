@@ -12,7 +12,7 @@ public class StartGameFlow implements IStartGameFlow {
         d1=display;
     }
 
-    public void StartGame(){
+    public String StartGame(){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your Name: ");
         String name = input.nextLine();
@@ -23,7 +23,7 @@ public class StartGameFlow implements IStartGameFlow {
            d1.leaderBoard(name);
 
         }
-
+return name;
 
     }
 
