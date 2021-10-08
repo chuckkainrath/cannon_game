@@ -12,8 +12,10 @@ public class StartGameFlow implements IStartGameFlow {
         d1=display;
     }
 
-    public void StartGame(String name){
-
+    public void StartGame(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter your Name: ");
+        String name = input.nextLine();
         boolean b = p1.playerExists(name);
 
         if(b == true) {
