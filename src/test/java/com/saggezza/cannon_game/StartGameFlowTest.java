@@ -35,7 +35,8 @@ public class StartGameFlowTest {
     public void flowTest3(){
 
         IPlayerData mPlayerData = mock(PlayerData.class);
-        when(mPlayerData.playerExists("chuck")).thenReturn(false);
+        when(mPlayerData.playerExists("chuck")).thenReturn(true);
+
         IDisplayFlow mDisplayFlow = mock(DisplayFlow.class);
 
         IStartGameFlow flowTest2 = new StartGameFlow(mPlayerData,mDisplayFlow);
@@ -54,7 +55,7 @@ public class StartGameFlowTest {
         IStartGameFlow flowTest2 = new StartGameFlow(mPlayerData,mDisplayFlow);
         flowTest2.StartGame("shilpa");
 
-        verify(mDisplayFlow, times(1)).leaderBoard("shilpa");
+        verify(mDisplayFlow, times(0)).leaderBoard("shilpa");
     }
 }
 
