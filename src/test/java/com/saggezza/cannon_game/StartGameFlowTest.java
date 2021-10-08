@@ -1,4 +1,5 @@
-import com.saggezza.cannon_game.*;
+package com.saggezza.cannon_game;
+
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;
