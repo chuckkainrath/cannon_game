@@ -15,11 +15,13 @@ public class PostGameFlow implements IPostGameFlow {
 
         if (playerData.playerExists(name)) {
             updateflow.updatePlayer(name, score);
-            displayFlow.leaderBoard(name);
+
 
         } else {
             playerData.createPlayer(name, score, score, 1, score);
+
         }
+        displayFlow.leaderBoard(name);
 
 
     }

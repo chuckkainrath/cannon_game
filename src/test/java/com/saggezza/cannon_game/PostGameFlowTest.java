@@ -22,6 +22,9 @@ public class PostGameFlowTest {
         // When: The game has ended and we confirm the user doesn't exist and the PostGameFlow class is executed
 
         when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
         IPostGameFlow flow=new PostGameFlow(mockPlayerdata,mockupdateFlow,mockDisplayFlow);
         flow.postGame("Chuck",5);
 
@@ -47,7 +50,10 @@ public class PostGameFlowTest {
 
             // When: The game has ended and we confirm the user doesn't exist and the PostGameFlow class is executed
 
-            when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
 
             IPostGameFlow flow = new PostGameFlow(mockPlayerdata,mockupdateFlow,mockDisplayFlow);
             flow.postGame("Chuck", 5);
@@ -73,6 +79,9 @@ public class PostGameFlowTest {
 
         // When: The game has ended and we confirm the user  exist and the PostGameFlow class is executed
 
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
         when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
 
 
@@ -99,7 +108,10 @@ public class PostGameFlowTest {
 
     // When: The game has ended and we confirm the user  exist and the PostGameFlow class is executed
 
-    when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(false);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
+        when(mockPlayerdata.playerExists("Chuck")).thenReturn(true);
 
     IPostGameFlow flow = new PostGameFlow(mockPlayerdata,mockUpdate, mockDisplayFlow);
     flow.postGame("Chuck", 5);
