@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CannonGameApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CannonGameApplication.class, args);
+//		SpringApplication.run(CannonGameApplication.class, args);
 		IShotFlow shotFlow = new ShotFlow(new AngleFlow(new AngleV()), new VelocityFlow(new VelocityValidityCheckObj()),
 				new DegreeConversion(), new GettingFinalXCoordinate(), new CalculateYValue(), new RoundingObject(),
 				new TargetHit()
