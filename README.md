@@ -137,7 +137,7 @@ Flow Class GWT
 
 - Given : Chuck does not exists
 - when: i start the game
-- then : the gameflow object is called once
+- then : the gameflow object is called once 
 
 - Given : Mansoor exists
 - when: i start the game
