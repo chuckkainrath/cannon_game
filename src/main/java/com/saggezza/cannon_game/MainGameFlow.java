@@ -16,17 +16,19 @@ public class MainGameFlow implements IMainGameFlow {
 
     public void startGame() {
 
-        startGameFlow.start();
-        gameFlow.playGame();
-        postGameFlow.postGame();
+        String name = startGameFlow.StartGame();
+        int score = gameFlow.playGame();
+        postGameFlow.postGame(name, score);
 
         Scanner reader = new Scanner(System.in);
         System.out.println("Would you like to play again? Enter Y/N:");
         String str = reader.nextLine();
 
-        while (str.toLowerCase() == "y") {
-            gameFlow.playGame();
-            postGameFlow.startPostGame();
+        while (str.toLowerCase().equals("y")) {
+            score = gameFlow.playGame();
+            postGameFlow.postGame(name, score);
+            System.out.println("Would you like to play again? Enter Y/N:");
+            str = reader.nextLine();
         }
         System.out.println(("Thanks for playing!"));
     }
