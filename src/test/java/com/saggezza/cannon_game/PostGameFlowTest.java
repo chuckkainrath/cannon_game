@@ -12,7 +12,7 @@ public class PostGameFlowTest {
 
         // Given : Chuck does not exists
 
-        String Chuck = "Chuck";
+        String name = "Chuck";
         int score = 5;
 
         IPlayerData mockPlayerdata = mock(IPlayerData.class);
@@ -39,7 +39,7 @@ public class PostGameFlowTest {
 
         // Given : Chuck does not exists
 
-        String Chuck = "Chuck";
+        String name = "Chuck";
         int score = 5;
 
         IPlayerData mockPlayerdata = mock(IPlayerData.class);
@@ -66,7 +66,7 @@ public class PostGameFlowTest {
 
         // Given : Chuck  exists
 
-        String Chuck = "Chuck";
+        String name = "Chuck";
         int score = 5;
 
         IPlayerData mockPlayerdata = mock(IPlayerData.class);
@@ -91,7 +91,7 @@ public class PostGameFlowTest {
 
         // Given : Chuck  exists
 
-        String Chuck = "Chuck";
+        String name = "Chuck";
         int score = 5;
 
         IPlayerData mockPlayerdata = mock(IPlayerData.class);
